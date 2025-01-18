@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>{{ page.title | default: site.title }}</title>
+    <meta name="description" content="{{ site.description }}" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    {%- seo -%} <!-- Provided by jekyll-seo-tag if you want SEO meta tags -->
+  </head>
+  <body>
+    <header>
+      <h1>{{ site.title }}</h1>
+      <nav>
+        <!-- We'll add links later, e.g.
+        <a href="{{ '/' | absolute_url }}">Home</a>
+        <a href="{{ '/projects' | absolute_url }}">Projects</a>
+        ... -->
+      </nav>
+    </header>
+
+    <main>
+      {{ content }}
+    </main>
+
+    <footer>
+      <p>&copy; {{ site.time | date: '%Y' }} by My Jekyll Site</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,12 @@
+# Site settings
+title: "My Jekyll Site"
+description: "A minimal Jekyll site"
+baseurl: "" # If you're publishing on GitHub Pages at username.github.io, keep it blank
+url: "https://www.michaelscutari.com" # Update with your GitHub Pages URL or custom domain
+
+# Build settings
+markdown: kramdown
+theme: minima # You can remove if you want to manually define all layouts/styles
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
