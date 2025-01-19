@@ -6,7 +6,6 @@ url: "https://www.michaelscutari.com" # Update with your GitHub Pages URL or cus
 
 # Build settings
 markdown: kramdown
-theme: minima # You can remove if you want to manually define all layouts/styles
 plugins:
   - jekyll-feed
   - jekyll-seo-tag

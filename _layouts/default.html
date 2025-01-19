@@ -1,30 +1,44 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>{{ page.title | default: site.title }}</title>
-    <meta name="description" content="{{ site.description }}" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <head>
+        <meta charset="UTF-8" />
+        <title>{{ page.title | default: site.title }}</title>
+        <meta name="description" content="{{ site.description }}" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    {%- seo -%} <!-- Provided by jekyll-seo-tag if you want SEO meta tags -->
-  </head>
-  <body>
-    <header>
-      <h1>{{ site.title }}</h1>
-      <nav>
-        <!-- We'll add links later, e.g.
-        <a href="{{ '/' | absolute_url }}">Home</a>
-        <a href="{{ '/projects' | absolute_url }}">Projects</a>
-        ... -->
-      </nav>
-    </header>
+        <!-- SEO tag (optional) -->
+        {%- seo -%}
 
-    <main>
-      {{ content }}
-    </main>
+        <!-- Link to the custom CSS file -->
+        <link
+            rel="stylesheet"
+            href="{{ '/assets/css/style.css' | relative_url }}"
+        />
+    </head>
+    <body>
+        <header>
+            <!-- Left side: Your Name (site title) -->
+            <a href="{{ '/' | relative_url }}" class="site-title"
+                >Michael Scutari</a
+            >
 
-    <footer>
-      <p>&copy; {{ site.time | date: '%Y' }} by My Jekyll Site</p>
-    </footer>
-  </body>
+            <!-- Right side: Nav links -->
+            <nav class="nav-links">
+                <a href="{{ '/' | relative_url }}">About</a>
+                <a href="{{ '/projects/' | relative_url }}">Projects</a>
+                <a href="{{ '/contact/' | relative_url }}">Contact</a>
+                <a href="{{ '/assets/resume.pdf' | relative_url }}" download
+                    >Resume
+                    <span class="download-arrow">⬇</span>
+                </a>
+            </nav>
+        </header>
+
+        <!-- Dynamically add a class to the main element -->
+        <main class="{{ page.css_class | default: '' }}">{{ content }}</main>
+
+        <footer>
+            <p>&copy; {{ site.time | date: "%Y" }} Michael Scutari</p>
+        </footer>
+    </body>
 </html>

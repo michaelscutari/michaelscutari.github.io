@@ -1,13 +1,15 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Home</title>
-    <meta name="description" content="A minimal Jekyll site" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Home | My Jekyll Site</title>
+    <head>
+        <meta charset="UTF-8" />
+        <title>About</title>
+        <meta name="description" content="A minimal Jekyll site" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!-- SEO tag (optional) --><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>About | My Jekyll Site</title>
 <meta name="generator" content="Jekyll v4.3.4" />
-<meta property="og:title" content="Home" />
+<meta property="og:title" content="About" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="A minimal Jekyll site" />
 <meta property="og:description" content="A minimal Jekyll site" />
@@ -16,37 +18,64 @@
 <meta property="og:site_name" content="My Jekyll Site" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Home" />
+<meta property="twitter:title" content="About" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","description":"A minimal Jekyll site","headline":"Home","name":"My Jekyll Site","url":"http://localhost:4000/"}</script>
+{"@context":"https://schema.org","@type":"WebSite","description":"A minimal Jekyll site","headline":"About","name":"My Jekyll Site","url":"http://localhost:4000/"}</script>
 <!-- End Jekyll SEO tag -->
-<!-- Provided by jekyll-seo-tag if you want SEO meta tags -->
-  </head>
-  <body>
-    <header>
-      <h1>My Jekyll Site</h1>
-      <nav>
-        <!-- We'll add links later, e.g.
-        <a href="http://localhost:4000/">Home</a>
-        <a href="http://localhost:4000/projects">Projects</a>
-        ... -->
-      </nav>
-    </header>
+<!-- Link to the custom CSS file -->
+        <link
+            rel="stylesheet"
+            href="/assets/css/style.css"
+        />
+    </head>
+    <body>
+        <header>
+            <!-- Left side: Your Name (site title) -->
+            <a href="/" class="site-title"
+                >Michael Scutari</a
+            >
 
-    <main>
-      <h1 id="welcome-to-my-jekyll-site">Welcome to my Jekyll Site</h1>
+            <!-- Right side: Nav links -->
+            <nav class="nav-links">
+                <a href="/">About</a>
+                <a href="/projects/">Projects</a>
+                <a href="/contact/">Contact</a>
+                <a href="/assets/resume.pdf" download
+                    >Resume
+                    <span class="download-arrow">⬇</span>
+                </a>
+            </nav>
+        </header>
 
-<p>This is a minimal homepage. Customize this text to introduce yourself, your projects, or anything else.</p>
+        <!-- Dynamically add a class to the main element -->
+        <main class="about"><h1 id="hi-im-michael">Hi, I’m Michael.</h1>
 
+<h2 id="i-am-an-undergraduate-and-pratt-fellow-at-duke-university">I am an undergraduate and Pratt Fellow at Duke University.</h2>
+
+<p>Right now, my work focuses on harnessing deep learning to solve big problems. I am a researcher in both the
+<a href="https://linkedin.com/in/yourusername">Singh Lab</a> and the <a href="https://linkedin.com/in/yourusername">Rudin Lab</a>.
+Beyond research, I am passionate about music, entrepreneurship, and photography.</p>
+
+<hr />
+<h2 id="this-is-a-website-for-showcasing-my-projects-in-more-detail-than-can-fit-on-a-resume">This is a website for showcasing my projects in more detail than can fit on a resume.</h2>
 <ul>
-  <li>Bullet point examples</li>
-  <li>Another bullet here</li>
+  <li>Check out the <a href="/projects/">Projects</a> page for more details.</li>
+  <li>You can also get in <a href="/contact/">Contact</a> with me.</li>
+  <li>My <a href="/assets/resume.pdf">Resume</a> is available for download here too.</li>
 </ul>
 
-    </main>
+<h2>
+    Connect with me on
+    <a href="https://linkedin.com/in/yourusername">LinkedIn</a>
+    <img src="/assets/icons/linkedin.svg" alt="LinkedIn" style="width: 20px; height: 20px; vertical-align: middle;" />
+    or check out my
+    <a href="https://github.com/yourusername">GitHub</a>
+    <img src="/assets/icons/github.svg" alt="GitHub" style="width: 20px; height: 20px; vertical-align: middle;" />.
+</h2>
+</main>
 
-    <footer>
-      <p>&copy; 2025 by My Jekyll Site</p>
-    </footer>
-  </body>
+        <footer>
+            <p>&copy; 2025 Michael Scutari</p>
+        </footer>
+    </body>
 </html>

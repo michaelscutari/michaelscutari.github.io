@@ -1,0 +1,206 @@
+/* -------------------------------------------------------- */
+/* 1. Import Google Fonts                                  */
+/* -------------------------------------------------------- */
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&family=Poppins:wght@400;600&display=swap");
+:root {
+    --header-font: "Poppins", sans-serif; /* Replace with your selected header font */
+    --body-font: "IBM Plex Mono", monospace;
+
+    --header-bg: #fff;
+    --header-text-color: #333;
+    --small-header-text-color: #333;
+
+    --body-text-color: #333;
+    --link-color: #666;
+    --link-hover-color: #000;
+}
+
+/* -------------------------------------------------------- */
+/* 3. Global Reset & Body                                  */
+/* -------------------------------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--body-font);
+    color: var(--body-text-color);
+    background-color: #fff;
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* -------------------------------------------------------- */
+/* 4. Header Bar (Optional)                                */
+/* -------------------------------------------------------- */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--header-bg);
+    color: var(--header-text-color);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 0.75rem 9.25%;
+}
+
+.site-title {
+    font-family: var(--header-font);
+    font-size: 1.7rem;
+    font-weight: 500;
+    text-decoration: none;
+    color: var(--header-text-color);
+}
+
+.nav-links a {
+    margin-left: 1.5rem;
+    text-decoration: none;
+    font-family: var(--header-font);
+    color: var(--link-color);
+    font-size: 1.1rem;
+    font-weight: 400;
+}
+.nav-links a:hover {
+    color: var(--link-hover-color);
+}
+
+/* -------------------------------------------------------- */
+/* 5. Main Content Area                                    */
+/* -------------------------------------------------------- */
+main {
+    max-width: 80%;
+    margin: 0 auto; /* center horizontally */
+    padding: 2rem;
+    text-align: left; /* keep text left-aligned */
+}
+
+main.about {
+    margin-left: 7%; /* 10% margin on the left */
+    margin-right: 30%; /* 40% margin on the right */
+    padding: 2rem; /* Add some padding for spacing */
+    text-align: left; /* Ensure text alignment */
+}
+
+/* -------------------------------------------------------- */
+/* Custom List Styling                                      */
+/* -------------------------------------------------------- */
+main ul {
+    list-style: none; /* Remove default bullets */
+    padding-left: 1.5rem; /* Add some space on the left for the bullets */
+}
+
+main ul li::before {
+    content: "➜"; /* Custom bullet point */
+    color: var(--link-color); /* Use your theme's link color */
+    font-weight: bold; /* Make it stand out */
+    margin-right: 0.5rem; /* Space between bullet and text */
+    display: inline-block; /* Ensure alignment */
+}
+
+main ul li {
+    margin-bottom: 0.8rem; /* Add spacing between list items */
+    font-size: 1.2rem; /* Slightly larger text for readability */
+    line-height: 1.5; /* Improve line spacing */
+    letter-spacing: -0.02em; /* Slightly tighten character spacing */
+    word-spacing: -0.1em; /* Reduce space between words */
+}
+
+@media (max-width: 600px) {
+    .about {
+        margin-left: 5%; /* Adjust for smaller screens */
+        margin-right: 10%; /* Adjust for smaller screens */
+        padding: 1rem;
+    }
+}
+/* -------------------------------------------------------- */
+/* 6. Footer (Optional)                                    */
+/* -------------------------------------------------------- */
+footer {
+    text-align: center;
+    padding: 1rem 0;
+    color: #999;
+    font-size: 0.875rem;
+}
+
+/* -------------------------------------------------------- */
+/* 7. Headings (Markdown-based)                            */
+/* -------------------------------------------------------- */
+/* Large h1 for the “Hi, I’m Michael Scutari” or any top-level heading */
+h1 {
+    font-family: var(--header-font);
+    font-size: 4rem; /* bigger than default */
+    color: #111; /* near-black for emphasis */
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+/* Subheadings (if you use h2, h3, etc.) */
+h2,
+h3 {
+    font-family: var(--body-font);
+    letter-spacing: -0.02em; /* Slightly tighten character spacing */
+    word-spacing: -0.2em; /* Reduce space between words */
+    font-size: 1.3rem;
+    color: var(--small-header-text-color);
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 520;
+}
+
+/* -------------------------------------------------------- */
+/* 8. Paragraphs & Links                                   */
+/* -------------------------------------------------------- */
+p {
+    font-size: 1.2rem; /* slightly larger body text */
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.02em; /* Slightly tighten character spacing */
+    word-spacing: -0.2em; /* Reduce space between words */
+}
+
+h2 img {
+    width: 1em; /* Match size to font height */
+    height: 1em;
+    vertical-align: middle;
+    margin-left: -0.1em; /* Add spacing between text and icon */
+    margin-top: -0.2em;
+}
+
+a {
+    color: var(--link-color);
+    text-decoration: none;
+    font-weight: 600; /* semi-bold for emphasis */
+}
+a:hover {
+    color: var(--link-hover-color);
+}
+
+.download-arrow {
+    font-size: 1rem;
+    margin-left: -0.15rem;
+    display: inline-block;
+    transition: transform 0.2s ease;
+}
+
+.nav-links a:hover .download-arrow {
+    transform: translateY(3px); /* Add a slight "bounce" on hover */
+}
+
+/* -------------------------------------------------------- */
+/* 9. Responsive Adjustments                               */
+/* -------------------------------------------------------- */
+@media (max-width: 600px) {
+    header {
+        padding: 1rem 2rem; /* reduce horizontal padding on smaller screens */
+    }
+    h1 {
+        font-size: 2.2rem; /* scale down heading for mobile */
+    }
+    p {
+        font-size: 1.1rem; /* slightly smaller text on mobile */
+    }
+    main {
+        padding: 1rem; /* less side padding for small screens */
+    }
+}
