@@ -48,14 +48,22 @@
                 >
             </nav>
         </header>
+        <!-- Minimal JS -->
         <script>
             const hamburgerBtn = document.querySelector(".hamburger");
             const navLinks = document.querySelector(".nav-links");
             const overlay = document.querySelector(".overlay");
 
+            // Open or close the menu on hamburger click
             hamburgerBtn.addEventListener("click", () => {
                 navLinks.classList.toggle("open");
                 overlay.classList.toggle("open");
+            });
+
+            // Close the menu if clicking on the overlay
+            overlay.addEventListener("click", () => {
+                navLinks.classList.remove("open");
+                overlay.classList.remove("open");
             });
         </script>
 

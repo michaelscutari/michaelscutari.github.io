@@ -576,7 +576,7 @@ header {
 
     /* When .open is toggled on, the menu slides in */
     .nav-links.open {
-        transform: translateX(0);
+        transform: translateX(50%);
     }
 }
 
