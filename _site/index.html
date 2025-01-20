@@ -30,12 +30,12 @@
     </head>
     <body>
         <header>
-            <!-- Left side: Your Name (site title) -->
             <a href="/" class="site-title"
                 >Michael Scutari</a
             >
-
-            <!-- Right side: Nav links -->
+            <!-- HAMBURGER BUTTON -->
+            <button class="hamburger">☰</button>
+            <!-- NAV LINKS -->
             <nav class="nav-links">
                 <a href="/">About</a>
                 <a href="/projects/">Projects</a>
@@ -43,11 +43,20 @@
                 <a
                     href="/assets/scutari_resume.pdf"
                     download
-                    >Resume
-                    <span class="download-arrow">⬇</span>
-                </a>
+                    >Resume <span class="download-arrow">⬇</span></a
+                >
             </nav>
         </header>
+        <script>
+            // Minimal JS to toggle .open
+            document
+                .querySelector(".hamburger")
+                .addEventListener("click", () => {
+                    document
+                        .querySelector(".nav-links")
+                        .classList.toggle("open");
+                });
+        </script>
 
         <!-- Dynamically add a class to the main element -->
         <main class="about"><h1 id="hi-im-michael">Hi, I’m Michael.</h1>

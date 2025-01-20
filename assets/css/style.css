@@ -27,6 +27,11 @@ body {
 }
 
 /* ========== HEADER ========== */
+/*
+  We make the .nav-links a normal horizontal menu on desktop,
+  but transform it into a hidden menu on mobile with a .hamburger toggle.
+*/
+
 header {
     display: flex;
     align-items: center;
@@ -43,6 +48,25 @@ header {
     text-decoration: none;
     color: var(--header-text-color);
 }
+
+/* HAMBURGER MENU
+   1) We'll hide it on larger screens, show on mobile.
+   2) The actual "hamburger" icon can be styled or just text "Menu".
+*/
+.hamburger {
+    display: none;
+    font-size: 1.3rem;
+    font-family: var(--header-font);
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+}
+
 .nav-links a {
     margin-left: 1.5rem;
     text-decoration: none;
@@ -55,6 +79,40 @@ header {
     color: var(--link-hover-color);
 }
 
+/*
+   RESPONSIVE NAV
+   On small screens, we'll hide .nav-links by default,
+   and show them only when .hamburger is clicked (JS needed in your HTML or
+   use the checkbox hack).
+*/
+@media (max-width: 800px) {
+    .hamburger {
+        display: block; /* Show hamburger button */
+    }
+    .nav-links {
+        display: none; /* Hide the nav links by default */
+        flex-direction: column;
+        margin-top: 1rem;
+    }
+    .nav-links a {
+        margin: 0.75rem 0;
+        font-size: 1.2rem;
+    }
+    /*
+    If you want a pure CSS approach, you'd do a checkbox hack or :target hack.
+    But typically you'll add a small JS snippet:
+
+      document.querySelector('.hamburger').addEventListener('click', () => {
+        document.querySelector('.nav-links').classList.toggle('open');
+      });
+
+    Then define:
+  */
+    .nav-links.open {
+        display: flex; /* Shows the nav when "open" is toggled */
+    }
+}
+
 /* ========== MAIN CONTENT ========== */
 main {
     max-width: 80%;
@@ -62,6 +120,7 @@ main {
     padding: 2rem;
     text-align: left;
 }
+/* Remove the big left/right margins on about page for mobile. */
 main.about {
     margin-left: 7%;
     margin-right: 30%;
@@ -155,13 +214,14 @@ a:hover {
     font-size: 2rem;
     margin-bottom: 1rem;
 }
+/* Align filter buttons better */
 .project-filters {
-    margin-bottom: 1rem;
+    margin: 1rem auto;
     text-align: center;
 }
 .project-filters button {
-    padding: 0.5rem 1rem;
-    margin: 0 0.5rem;
+    padding: 0.5rem 1.2rem;
+    margin: 0 0.5rem 1rem 0.5rem;
     cursor: pointer;
     font-family: var(--body-font);
     border: 1px solid #ddd;
@@ -185,6 +245,7 @@ a:hover {
     font-family: var(--header-font);
     word-spacing: 0.05em;
 }
+/* Projects gallery: 3 columns on desktop, then reduce on smaller screens. */
 .project-gallery {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -238,7 +299,7 @@ hr {
 
 /* ========== PROJECT DETAIL PAGE ========== */
 .project-page {
-    max-width: 800px;
+    max-width: 60%;
     margin: 0 auto;
     padding: 2rem;
 }
@@ -259,6 +320,67 @@ hr {
     font-size: 2rem;
     margin-bottom: 1rem;
     color: #111;
+}
+/* Constrain images so they never overflow the container */
+.project-content img {
+    max-width: 70%;
+    height: auto;
+    display: block;
+    align-content: center;
+    margin-bottom: 1rem;
+}
+/* Float-left images with text wrap */
+.project-content img.float-left {
+    float: left;
+    margin: 0 1rem 1rem 0;
+}
+/* Two-column layout container */
+.project-content .two-col {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+.project-content .two-col > div {
+    flex: 1;
+}
+/* Clear floats manually if needed */
+.project-content .clear {
+    clear: both;
+}
+/* Inline <code> style */
+code {
+    background-color: #f5f5f5;
+    color: #d73a49;
+    padding: 2px 4px;
+    border-radius: 3px;
+    font-size: 90%;
+    font-family: monospace;
+}
+/* For multi-line code blocks */
+pre code {
+    background-color: inherit;
+    color: inherit;
+    padding: 0;
+    border-radius: 0;
+    font-size: 100%;
+}
+.highlight {
+    display: block;
+    width: 80%;
+    background-color: #f2f2f2;
+    padding: 10px;
+    border-radius: 5px;
+    overflow-x: auto;
+}
+.highlight .k {
+    color: #d73a49;
+}
+.highlight .s {
+    color: #032f62;
+}
+.highlight .c {
+    color: #6a737d;
+    font-style: italic;
 }
 .project-meta {
     font-size: 0.9rem;
@@ -305,30 +427,62 @@ hr {
 }
 
 /* ========== RESPONSIVE ADJUSTMENTS ========== */
+@media (max-width: 1200px) {
+    /* For "About" page or any large margin pages,
+       reduce margins so it doesn't look half-empty on medium screens. */
+    main.about {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+    .project-page {
+        max-width: 80%;
+    }
+}
 @media (max-width: 900px) {
-    .project-gallery {
-        grid-template-columns: 1fr 1fr;
+    .project-gallery,
+    .featured-gallery,
+    .all-gallery {
+        grid-template-columns: 1fr 1fr; /* 2 columns on mid-size screens */
     }
 }
 @media (max-width: 600px) {
-    .about {
-        margin-left: 5%;
-        margin-right: 10%;
+    /* Remove big margins on the About page so it fills the screen */
+    main.about {
+        margin-left: 2%;
+        margin-right: 2%;
         padding: 1rem;
     }
-    header {
-        padding: 1rem 2rem;
-    }
+    /* Shrink headings and paragraphs a bit */
     h1 {
         font-size: 2.2rem;
     }
     p {
         font-size: 1.1rem;
     }
+    /* Main container padding less on mobile */
     main {
         padding: 1rem;
+        max-width: 90%;
     }
-    .project-gallery {
+    /* Single column on Projects page */
+    .project-gallery,
+    .featured-gallery,
+    .all-gallery {
         grid-template-columns: 1fr;
+    }
+    /* Sort/Filter buttons - ensure spacing on mobile */
+    .project-filters {
+        margin: 1rem auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .project-filters button {
+        margin: 0.5rem;
+        font-size: 1rem;
+    }
+    /* Project detail narrower */
+    .project-page {
+        max-width: 95%;
     }
 }

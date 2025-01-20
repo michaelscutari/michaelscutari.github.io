@@ -14,6 +14,9 @@
             <a href="{{ '/' | relative_url }}" class="site-title"
                 >Michael Scutari</a
             >
+            <!-- HAMBURGER BUTTON -->
+            <button class="hamburger">☰</button>
+            <!-- NAV LINKS -->
             <nav class="nav-links">
                 <a href="{{ '/' | relative_url }}">About</a>
                 <a href="{{ '/projects/' | relative_url }}">Projects</a>
@@ -21,15 +24,24 @@
                 <a
                     href="{{ '/assets/scutari_resume.pdf' | relative_url }}"
                     download
-                    >Resume
-                    <span class="download-arrow">⬇</span>
-                </a>
+                    >Resume <span class="download-arrow"> ⬇</span></a
+                >
             </nav>
         </header>
+        <script>
+            // Minimal JS to toggle .open
+            document
+                .querySelector(".hamburger")
+                .addEventListener("click", () => {
+                    document
+                        .querySelector(".nav-links")
+                        .classList.toggle("open");
+                });
+        </script>
 
-        <main>
+        <main class="project-page">
             <!-- Show project content -->
-            <article class="project-detail">
+            <article class="project-content">
                 <h1>{{ page.title }}</h1>
                 {{ content }}
             </article>

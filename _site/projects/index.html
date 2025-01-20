@@ -30,12 +30,12 @@
     </head>
     <body>
         <header>
-            <!-- Left side: Your Name (site title) -->
             <a href="/" class="site-title"
                 >Michael Scutari</a
             >
-
-            <!-- Right side: Nav links -->
+            <!-- HAMBURGER BUTTON -->
+            <button class="hamburger">☰</button>
+            <!-- NAV LINKS -->
             <nav class="nav-links">
                 <a href="/">About</a>
                 <a href="/projects/">Projects</a>
@@ -43,11 +43,20 @@
                 <a
                     href="/assets/scutari_resume.pdf"
                     download
-                    >Resume
-                    <span class="download-arrow">⬇</span>
-                </a>
+                    >Resume <span class="download-arrow">⬇</span></a
+                >
             </nav>
         </header>
+        <script>
+            // Minimal JS to toggle .open
+            document
+                .querySelector(".hamburger")
+                .addEventListener("click", () => {
+                    document
+                        .querySelector(".nav-links")
+                        .classList.toggle("open");
+                });
+        </script>
 
         <!-- Dynamically add a class to the main element -->
         <main class="projects-page"><h1 id="featured-projects">Featured Projects</h1>
@@ -61,6 +70,12 @@
     <a class="project-item" data-category="professional" href="/projects/general_robotics_lab/">
       <img src="/assets/images/humanoid_teaser.jpg" alt="Duke Humanoid" />
       <h2>Duke Humanoid</h2>
+      <p>Open source, 10 degrees of freedom humanoid robot. I directed design of electrical and control systems.</p>
+    </a>
+  
+    <a class="project-item" data-category="personal" href="/projects/demo/">
+      <img src="/assets/images/tower.jpg" alt="Markdown Demo" />
+      <h2>Markdown Demo</h2>
       <p>Open source, 10 degrees of freedom humanoid robot. I directed design of electrical and control systems.</p>
     </a>
   
@@ -96,6 +111,12 @@
     <a class="project-item" data-category="professional" href="/projects/general_robotics_lab/">
       <img src="/assets/images/humanoid_teaser.jpg" alt="Duke Humanoid" />
       <h2>Duke Humanoid</h2>
+      <p>Open source, 10 degrees of freedom humanoid robot. I directed design of electrical and control systems.</p>
+    </a>
+  
+    <a class="project-item" data-category="personal" href="/projects/demo/">
+      <img src="/assets/images/tower.jpg" alt="Markdown Demo" />
+      <h2>Markdown Demo</h2>
       <p>Open source, 10 degrees of freedom humanoid robot. I directed design of electrical and control systems.</p>
     </a>
   

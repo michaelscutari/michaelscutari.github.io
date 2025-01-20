@@ -5,7 +5,25 @@
         <title>Duke Humanoid</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <!-- SEO tag (optional) --><!-- Begin Jekyll SEO tag v2.8.0 -->
+        <!-- MathJax Config -->
+        <script type="text/javascript">
+            MathJax = {
+                tex: {
+                    inlineMath: [
+                        ["$", "$"],
+                        ["\\(", "\\)"],
+                    ],
+                    displayMath: [
+                        ["$$", "$$"],
+                        ["\\[", "\\]"],
+                    ],
+                },
+            };
+        </script>
+        <!-- Actual MathJax Library (3.x) -->
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+        <!-- Optional: SEO tag --><!-- Begin Jekyll SEO tag v2.8.0 -->
 <title>Duke Humanoid | My Jekyll Site</title>
 <meta name="generator" content="Jekyll v4.3.4" />
 <meta property="og:title" content="Duke Humanoid" />
@@ -22,29 +40,44 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-01-01T00:00:00-05:00","datePublished":"2025-01-01T00:00:00-05:00","description":"Open source, 10 degrees of freedom humanoid robot. I directed design of electrical and control systems.","headline":"Duke Humanoid","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/projects/general_robotics_lab/"},"url":"http://localhost:4000/projects/general_robotics_lab/"}</script>
 <!-- End Jekyll SEO tag -->
-<!-- Link to your main CSS -->
+<!-- Main CSS -->
         <link
             rel="stylesheet"
             href="/assets/css/style.css"
         />
     </head>
+
     <body>
         <header>
             <a href="/" class="site-title"
                 >Michael Scutari</a
             >
+            <!-- HAMBURGER BUTTON -->
+            <button class="hamburger">☰</button>
+            <!-- NAV LINKS -->
             <nav class="nav-links">
                 <a href="/">About</a>
                 <a href="/projects/">Projects</a>
                 <a href="/contact/">Contact</a>
-                <a href="/assets/resume.pdf" download>
-                    Resume <span class="download-arrow">⬇</span>
-                </a>
+                <a
+                    href="/assets/scutari_resume.pdf"
+                    download
+                    >Resume <span class="download-arrow">⬇</span></a
+                >
             </nav>
         </header>
+        <script>
+            // Minimal JS to toggle .open
+            document
+                .querySelector(".hamburger")
+                .addEventListener("click", () => {
+                    document
+                        .querySelector(".nav-links")
+                        .classList.toggle("open");
+                });
+        </script>
 
         <main class="project-page">
-            <!-- "Back to Projects" link at top -->
             <p class="back-link">
                 <a href="/projects/"
                     >← Back to Projects</a
@@ -62,7 +95,6 @@
 
             <article class="project-content">
                 <h1>Duke Humanoid</h1>
-
                 <p class="project-meta">
                     
                     <strong>Date:</strong> January 01, 2025
@@ -71,7 +103,7 @@
                     <strong>Priority:</strong> 4 
                 </p>
 
-                 
+                
                 <div class="technologies">
                     <strong>Technologies:</strong>
                     
@@ -82,12 +114,10 @@
                     <span class="tech-badge">Flask</span>
                     
                 </div>
-                
-            </article>
-
-            <h2 id="poop">poop</h2>
+                 <h2 id="poop">poop</h2>
 <p>Where is this text? it is missing?</p>
 
+            </article>
         </main>
 
         <footer>

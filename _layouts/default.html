@@ -17,12 +17,12 @@
     </head>
     <body>
         <header>
-            <!-- Left side: Your Name (site title) -->
             <a href="{{ '/' | relative_url }}" class="site-title"
                 >Michael Scutari</a
             >
-
-            <!-- Right side: Nav links -->
+            <!-- HAMBURGER BUTTON -->
+            <button class="hamburger">☰</button>
+            <!-- NAV LINKS -->
             <nav class="nav-links">
                 <a href="{{ '/' | relative_url }}">About</a>
                 <a href="{{ '/projects/' | relative_url }}">Projects</a>
@@ -30,11 +30,20 @@
                 <a
                     href="{{ '/assets/scutari_resume.pdf' | relative_url }}"
                     download
-                    >Resume
-                    <span class="download-arrow">⬇</span>
-                </a>
+                    >Resume <span class="download-arrow">⬇</span></a
+                >
             </nav>
         </header>
+        <script>
+            // Minimal JS to toggle .open
+            document
+                .querySelector(".hamburger")
+                .addEventListener("click", () => {
+                    document
+                        .querySelector(".nav-links")
+                        .classList.toggle("open");
+                });
+        </script>
 
         <!-- Dynamically add a class to the main element -->
         <main class="{{ page.css_class | default: '' }}">{{ content }}</main>

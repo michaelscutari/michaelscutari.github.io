@@ -5,32 +5,65 @@
         <title>{{ page.title | default: site.title }}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <!-- SEO tag (optional) -->
+        <!-- MathJax Config -->
+        <script type="text/javascript">
+            MathJax = {
+                tex: {
+                    inlineMath: [
+                        ["$", "$"],
+                        ["\\(", "\\)"],
+                    ],
+                    displayMath: [
+                        ["$$", "$$"],
+                        ["\\[", "\\]"],
+                    ],
+                },
+            };
+        </script>
+        <!-- Actual MathJax Library (3.x) -->
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+        <!-- Optional: SEO tag -->
         {%- seo -%}
 
-        <!-- Link to your main CSS -->
+        <!-- Main CSS -->
         <link
             rel="stylesheet"
             href="{{ '/assets/css/style.css' | relative_url }}"
         />
     </head>
+
     <body>
         <header>
             <a href="{{ '/' | relative_url }}" class="site-title"
                 >Michael Scutari</a
             >
+            <!-- HAMBURGER BUTTON -->
+            <button class="hamburger">☰</button>
+            <!-- NAV LINKS -->
             <nav class="nav-links">
                 <a href="{{ '/' | relative_url }}">About</a>
                 <a href="{{ '/projects/' | relative_url }}">Projects</a>
                 <a href="{{ '/contact/' | relative_url }}">Contact</a>
-                <a href="{{ '/assets/resume.pdf' | relative_url }}" download>
-                    Resume <span class="download-arrow">⬇</span>
-                </a>
+                <a
+                    href="{{ '/assets/scutari_resume.pdf' | relative_url }}"
+                    download
+                    >Resume <span class="download-arrow">⬇</span></a
+                >
             </nav>
         </header>
+        <script>
+            // Minimal JS to toggle .open
+            document
+                .querySelector(".hamburger")
+                .addEventListener("click", () => {
+                    document
+                        .querySelector(".nav-links")
+                        .classList.toggle("open");
+                });
+        </script>
 
         <main class="project-page">
-            <!-- "Back to Projects" link at top -->
             <p class="back-link">
                 <a href="{{ '/projects/' | relative_url }}"
                     >← Back to Projects</a
@@ -48,7 +81,6 @@
 
             <article class="project-content">
                 <h1>{{ page.title }}</h1>
-
                 <p class="project-meta">
                     {% if page.date %}
                     <strong>Date:</strong> {{ page.date | date: "%B %d, %Y" }}
@@ -58,18 +90,15 @@
                     <strong>Priority:</strong> {{ page.priority }} {% endif %}
                 </p>
 
-                {% comment %} Optional: technologies list goes here (see section
-                below) {% endcomment %} {% if page.technologies %}
+                {% if page.technologies %}
                 <div class="technologies">
                     <strong>Technologies:</strong>
                     {% for tech in page.technologies %}
                     <span class="tech-badge">{{ tech }}</span>
                     {% endfor %}
                 </div>
-                {% endif %}
+                {% endif %} {{ content }}
             </article>
-
-            {{ content }}
         </main>
 
         <footer>
