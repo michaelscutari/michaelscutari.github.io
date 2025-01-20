@@ -3,6 +3,7 @@ layout: default
 title: "About"
 css_class: about
 ---
+
 # Hi, I'm Michael.
 
 ## I am an undergraduate and Pratt Fellow at Duke University.
@@ -19,9 +20,9 @@ Beyond research, I am passionate about music, entrepreneurship, and photography.
 
 <h2>
     Connect with me on
-    <a href="https://linkedin.com/in/yourusername">LinkedIn</a>
+    <a href="https://www.linkedin.com/in/michael-scutari/">LinkedIn</a>
     <img src="{{ '/assets/icons/linkedin.svg' | relative_url }}" alt="LinkedIn" style="width: 20px; height: 20px; vertical-align: middle;" />
     or check out my
-    <a href="https://github.com/yourusername">GitHub</a>
+    <a href="https://github.com/michaelscutari">GitHub</a>
     <img src="{{ '/assets/icons/github.svg' | relative_url }}" alt="GitHub" style="width: 20px; height: 20px; vertical-align: middle;" />.
 </h2>

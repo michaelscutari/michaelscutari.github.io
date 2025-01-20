@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Projects</title>
+        <meta name="description" content="A minimal Jekyll site" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!-- SEO tag (optional) --><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Projects | My Jekyll Site</title>
+<meta name="generator" content="Jekyll v4.3.4" />
+<meta property="og:title" content="Projects" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="A minimal Jekyll site" />
+<meta property="og:description" content="A minimal Jekyll site" />
+<link rel="canonical" href="http://localhost:4000/projects.html" />
+<meta property="og:url" content="http://localhost:4000/projects.html" />
+<meta property="og:site_name" content="My Jekyll Site" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Projects" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"A minimal Jekyll site","headline":"Projects","url":"http://localhost:4000/projects.html"}</script>
+<!-- End Jekyll SEO tag -->
+<!-- Link to the custom CSS file -->
+        <link
+            rel="stylesheet"
+            href="/assets/css/style.css"
+        />
+    </head>
+    <body>
+        <header>
+            <!-- Left side: Your Name (site title) -->
+            <a href="/" class="site-title"
+                >Michael Scutari</a
+            >
+
+            <!-- Right side: Nav links -->
+            <nav class="nav-links">
+                <a href="/">About</a>
+                <a href="/projects/">Projects</a>
+                <a href="/contact/">Contact</a>
+                <a
+                    href="/assets/scutari_resume.pdf"
+                    download
+                    >Resume
+                    <span class="download-arrow">⬇</span>
+                </a>
+            </nav>
+        </header>
+
+        <!-- Dynamically add a class to the main element -->
+        <main class="projects-page"><h1 id="featured-projects">Featured Projects</h1>
+<hr />
+<!-- Featured Projects (highest priority) -->
+<div class="featured-gallery">
+  
+  
+
+  
+    <a class="project-item" data-category="professional" href="/projects/general_robotics_lab/">
+      <img src="/assets/images/humanoid_teaser.jpg" alt="Humanoid Project" />
+      <h2>Humanoid Project</h2>
+      <p>Open source, 10 degrees of freedom humanoid robot. I directed design of electrical and control systems.</p>
+    </a>
+  
+    <a class="project-item" data-category="professional" href="/projects/ranker/">
+      <img src="/assets/images/ranker_teaser.jpg" alt="Ranker Program Refactor" />
+      <h2>Ranker Program Refactor</h2>
+      <p>Hired and led a intra-university team of 3 in updating the Amboseli Baboon Lab's 'Ranker' Program.</p>
+    </a>
+  
+</div>
+
+<!-- All Projects (sorted newest to oldest by date) -->
+<h1 id="all-projects">All Projects</h1>
+<hr />
+
+<!-- Filter Buttons -->
+<div class="project-filters">
+  <button onclick="filterAllProjects('all')">All</button>
+  <button onclick="filterAllProjects('professional')">Professional</button>
+  <button onclick="filterAllProjects('personal')">Personal</button>
+</div>
+<!-- All Projects (sorted newest to oldest by date) -->
+<div class="all-gallery">
+  
+  
+    <a class="project-item" data-category="professional" href="/projects/ranker/">
+      <img src="/assets/images/ranker_teaser.jpg" alt="Ranker Program Refactor" />
+      <h2>Ranker Program Refactor</h2>
+      <p>Hired and led a intra-university team of 3 in updating the Amboseli Baboon Lab's 'Ranker' Program.</p>
+    </a>
+  
+    <a class="project-item" data-category="professional" href="/projects/general_robotics_lab/">
+      <img src="/assets/images/humanoid_teaser.jpg" alt="Humanoid Project" />
+      <h2>Humanoid Project</h2>
+      <p>Open source, 10 degrees of freedom humanoid robot. I directed design of electrical and control systems.</p>
+    </a>
+  
+</div>
+
+<script>
+  /**
+   * Filters items in the all-gallery only
+   */
+  function filterAllProjects(category) {
+    // Only select items within the .all-gallery
+    const items = document.querySelectorAll('.all-gallery .project-item');
+
+    items.forEach(item => {
+      if (category === 'all') {
+        item.style.display = 'block';
+      } else {
+        const cat = item.getAttribute('data-category');
+        item.style.display = (cat === category) ? 'block' : 'none';
+      }
+    });
+  }
+</script>
+
+</main>
+
+        <footer>
+            <p>&copy; 2025 Michael Scutari</p>
+        </footer>
+    </body>
+</html>

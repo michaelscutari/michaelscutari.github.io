@@ -187,6 +187,134 @@ a:hover {
     transform: translateY(3px); /* Add a slight "bounce" on hover */
 }
 
+/* ===========================
+   Projects Page Overrides
+   =========================== */
+.projects-page h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+/* Filter Buttons */
+.project-filters {
+    margin-bottom: 1rem;
+    text-align: center; /* Center the buttons themselves */
+}
+.project-filters button {
+    padding: 0.5rem 1rem;
+    margin: 0 0.5rem;
+    cursor: pointer;
+    font-family: var(--body-font);
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background: #fff;
+}
+.project-filters button:hover {
+    background: #f5f5f5;
+}
+
+/* Section Headings */
+.projects-page h2 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-family: var(--header-font);
+    word-spacing: 0.05em;
+}
+
+/* The galleries: 3 columns, centered.
+   If you want strict 3 columns even on small screens, we won't auto-fit. */
+.project-gallery {
+    display: grid;
+    /* Exactly three columns, each with equal width */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    justify-content: center; /* centers the entire grid horizontally */
+    margin-bottom: 2rem;
+}
+
+/* Individual project cards */
+.project-item {
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-radius: 8px; /* Rounded corners */
+    padding: 1rem;
+    text-align: left; /* Left-justify text */
+    transition: box-shadow 0.2s ease;
+}
+
+/* Hover effect */
+.project-item:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Project thumbnail/image */
+.project-item img {
+    width: 100%;
+    height: 180px; /* or whatever height you prefer */
+    object-fit: cover; /* ensures the image is cropped rather than distorted */
+    border-radius: 6px; /* Keep your existing corner rounding if desired */
+    margin-bottom: -1.65rem;
+}
+
+/* Title within card */
+.project-item {
+    display: block; /* So the <a> becomes a block-level card */
+    text-decoration: none; /* Remove default underline */
+    color: inherit; /* Use the parent’s text color */
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: left;
+    transition: box-shadow 0.2s ease;
+}
+
+.project-item:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* For the headings/paragraphs inside the <a> */
+.project-item h2 {
+    margin-bottom: 0.5rem;
+    font-family: var(--header-font);
+    font-size: 1.25rem;
+}
+.project-item p {
+    margin-bottom: 0;
+    color: #666;
+    font-weight: 100;
+    font-size: 15px;
+}
+
+.featured-gallery,
+.all-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* exactly 3 columns */
+    gap: 1rem;
+    justify-content: center; /* center the columns horizontally */
+    margin-bottom: 2rem;
+}
+
+hr {
+    margin-bottom: 10px; /* Adjust the value to your preferred margin */
+}
+
+/*
+   If you want this layout to be responsive on smaller screens
+   (so it doesn't squish into 3 tiny columns), add a media query:
+*/
+@media (max-width: 900px) {
+    .project-gallery {
+        grid-template-columns: 1fr 1fr; /* 2 columns on mid-size screens */
+    }
+}
+
+@media (max-width: 600px) {
+    .project-gallery {
+        grid-template-columns: 1fr; /* 1 column on small screens */
+    }
+}
+
 /* -------------------------------------------------------- */
 /* 9. Responsive Adjustments                               */
 /* -------------------------------------------------------- */

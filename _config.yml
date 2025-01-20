@@ -4,6 +4,12 @@ description: "A minimal Jekyll site"
 baseurl: "" # If you're publishing on GitHub Pages at username.github.io, keep it blank
 url: "https://www.michaelscutari.com" # Update with your GitHub Pages URL or custom domain
 
+# Collections
+collections:
+  projects:
+    output: true
+    permalink: /projects/:title/
+
 # Build settings
 markdown: kramdown
 plugins:
