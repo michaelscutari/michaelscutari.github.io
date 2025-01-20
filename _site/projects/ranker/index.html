@@ -53,7 +53,8 @@
                 >Michael Scutari</a
             >
             <!-- HAMBURGER BUTTON -->
-            <button class="hamburger">☰</button>
+            <button class="hamburger" aria-label="Toggle menu">☰</button>
+            <div class="overlay"></div>
             <!-- NAV LINKS -->
             <nav class="nav-links">
                 <a href="/">About</a>
@@ -67,14 +68,14 @@
             </nav>
         </header>
         <script>
-            // Minimal JS to toggle .open
-            document
-                .querySelector(".hamburger")
-                .addEventListener("click", () => {
-                    document
-                        .querySelector(".nav-links")
-                        .classList.toggle("open");
-                });
+            const hamburgerBtn = document.querySelector(".hamburger");
+            const navLinks = document.querySelector(".nav-links");
+            const overlay = document.querySelector(".overlay");
+
+            hamburgerBtn.addEventListener("click", () => {
+                navLinks.classList.toggle("open");
+                overlay.classList.toggle("open");
+            });
         </script>
 
         <main class="project-page">
