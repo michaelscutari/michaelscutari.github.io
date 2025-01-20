@@ -32,10 +32,11 @@ css_class: "projects-page"
 
 <!-- Filter Buttons -->
 <div class="project-filters">
-  <button onclick="filterAllProjects('all')">All</button>
-  <button onclick="filterAllProjects('professional')">Professional</button>
-  <button onclick="filterAllProjects('personal')">Personal</button>
+  <button data-filter="all" onclick="filterAllProjects('all')">All</button>
+  <button data-filter="professional" onclick="filterAllProjects('professional')">Professional</button>
+  <button data-filter="personal" onclick="filterAllProjects('personal')">Personal</button>
 </div>
+
 <!-- All Projects (sorted newest to oldest by date) -->
 <div class="all-gallery">
   {% assign sorted_by_date = site.projects | sort: 'date' | reverse %}
@@ -53,13 +54,9 @@ css_class: "projects-page"
 </div>
 
 <script>
-  /**
-   * Filters items in the all-gallery only
-   */
   function filterAllProjects(category) {
-    // Only select items within the .all-gallery
+    // 1. Filter logic for .all-gallery
     const items = document.querySelectorAll('.all-gallery .project-item');
-
     items.forEach(item => {
       if (category === 'all') {
         item.style.display = 'block';
@@ -68,5 +65,21 @@ css_class: "projects-page"
         item.style.display = (cat === category) ? 'block' : 'none';
       }
     });
+
+    // 2. Highlight the correct button
+    const buttons = document.querySelectorAll('.project-filters button');
+    buttons.forEach(btn => {
+      // Remove .active from all buttons
+      btn.classList.remove('active');
+      // If this button's data-filter matches `category`, add .active
+      if (btn.dataset.filter === category) {
+        btn.classList.add('active');
+      }
+    });
   }
+
+   //Optionally: Call `filterAllProjects('all')` by default on page load:
+   document.addEventListener('DOMContentLoaded', () => {
+   filterAllProjects('all');
+   });
 </script>

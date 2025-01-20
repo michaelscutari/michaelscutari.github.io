@@ -200,6 +200,7 @@ a:hover {
     margin-bottom: 1rem;
     text-align: center; /* Center the buttons themselves */
 }
+
 .project-filters button {
     padding: 0.5rem 1rem;
     margin: 0 0.5rem;
@@ -208,9 +209,20 @@ a:hover {
     border: 1px solid #ddd;
     border-radius: 4px;
     background: #fff;
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
 }
+
 .project-filters button:hover {
     background: #f5f5f5;
+}
+
+/* Highlight the selected filter */
+.project-filters button.active {
+    background-color: #050505; /* Or your preferred brand color */
+    color: #fff;
+    border-color: #0f0f0f;
 }
 
 /* Section Headings */
@@ -261,7 +273,7 @@ a:hover {
     display: block; /* So the <a> becomes a block-level card */
     text-decoration: none; /* Remove default underline */
     color: inherit; /* Use the parent’s text color */
-    background-color: #fff;
+    background-color: #f7f7f7;
     border: 1px solid #eee;
     border-radius: 8px;
     padding: 1rem;
@@ -297,6 +309,87 @@ a:hover {
 
 hr {
     margin-bottom: 10px; /* Adjust the value to your preferred margin */
+}
+
+/* Layout for the project detail page */
+.project-page {
+    max-width: 800px; /* or whatever width you prefer */
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Optional hero/banner image */
+.project-hero {
+    margin-bottom: 1.5rem;
+}
+.project-hero img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px; /* or 0 if you prefer square corners */
+}
+
+/* Main article content styling */
+.project-content {
+    text-align: left;
+}
+.project-content h1 {
+    font-family: var(--header-font);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #111;
+}
+.project-meta {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 1.5rem;
+    font-family: var(--body-font);
+}
+.project-content p,
+.project-content ul,
+.project-content ol {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+    font-family: var(--body-font);
+}
+
+/* Back to Projects link */
+.back-link {
+    margin-bottom: 1rem;
+}
+
+.back-link a {
+    color: var(--link-color);
+    text-decoration: none;
+    font-weight: 600;
+    font-family: var(--body-font);
+}
+
+.back-link a:hover {
+    text-decoration: underline;
+}
+
+/* Simple list or inline badges for technologies */
+.technologies {
+    margin-bottom: 1.5rem;
+}
+
+.technologies ul {
+    list-style-type: disc;
+    margin: 0.5rem 0 0.5rem 1.5rem; /* indent bullet points */
+    padding: 0;
+}
+
+/* If using inline badges instead of <ul> ... */
+.tech-badge {
+    display: inline-block;
+    background-color: #eee;
+    color: #333;
+    padding: 0.25rem 0.5rem;
+    margin: 0 0.5rem 0.5rem 0;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-family: var(--body-font);
 }
 
 /*

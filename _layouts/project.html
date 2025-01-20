@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>{{ page.title | default: site.title }}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!-- SEO tag (optional) -->
+        {%- seo -%}
+
+        <!-- Link to your main CSS -->
+        <link
+            rel="stylesheet"
+            href="{{ '/assets/css/style.css' | relative_url }}"
+        />
+    </head>
+    <body>
+        <header>
+            <a href="{{ '/' | relative_url }}" class="site-title"
+                >Michael Scutari</a
+            >
+            <nav class="nav-links">
+                <a href="{{ '/' | relative_url }}">About</a>
+                <a href="{{ '/projects/' | relative_url }}">Projects</a>
+                <a href="{{ '/contact/' | relative_url }}">Contact</a>
+                <a href="{{ '/assets/resume.pdf' | relative_url }}" download>
+                    Resume <span class="download-arrow">⬇</span>
+                </a>
+            </nav>
+        </header>
+
+        <main class="project-page">
+            <!-- "Back to Projects" link at top -->
+            <p class="back-link">
+                <a href="{{ '/projects/' | relative_url }}"
+                    >← Back to Projects</a
+                >
+            </p>
+
+            {% if page.header_image %}
+            <div class="project-hero">
+                <img
+                    src="{{ page.header_image | relative_url }}"
+                    alt="{{ page.title }}"
+                />
+            </div>
+            {% endif %}
+
+            <article class="project-content">
+                <h1>{{ page.title }}</h1>
+
+                <p class="project-meta">
+                    {% if page.date %}
+                    <strong>Date:</strong> {{ page.date | date: "%B %d, %Y" }}
+                    &nbsp; {% endif %} {% if page.category %}
+                    <strong>Category:</strong> {{ page.category }} &nbsp; {%
+                    endif %} {% if page.priority %}
+                    <strong>Priority:</strong> {{ page.priority }} {% endif %}
+                </p>
+
+                {% comment %} Optional: technologies list goes here (see section
+                below) {% endcomment %} {% if page.technologies %}
+                <div class="technologies">
+                    <strong>Technologies:</strong>
+                    {% for tech in page.technologies %}
+                    <span class="tech-badge">{{ tech }}</span>
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </article>
+
+            {{ content }}
+        </main>
+
+        <footer>
+            <p>&copy; {{ site.time | date: "%Y" }} Michael Scutari</p>
+        </footer>
+    </body>
+</html>
