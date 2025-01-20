@@ -7,8 +7,4 @@ header_image: "/assets/images/ranker_teaser.jpg"
 description: "Hired and led a intra-university team of 3 in updating the Amboseli Baboon Lab's 'Ranker' Program."
 layout: "project"  # We'll create a project layout or use default
 ---
-Here is the long-form description of my project. I can add images:
-
-![Architecture Diagram](/assets/images/tower.jpg)
-
-And more Markdown content...
+## Coming soon!

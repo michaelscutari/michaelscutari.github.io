@@ -12,5 +12,4 @@ technologies:
   - Flask
 ---
 
-## poop
-Where is this text? it is missing?
+## Coming Soon!

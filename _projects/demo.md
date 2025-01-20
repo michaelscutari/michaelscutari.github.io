@@ -1,15 +1,15 @@
 ---
 title: "Markdown Demo"
-date: 2025-01-01
+date: 2025-01-20
 category: "personal"  # or "personal"
 priority: 4
 header_image: "/assets/images/tower.jpg"
-description: "Open source, 10 degrees of freedom humanoid robot. I directed design of electrical and control systems."
+description: "This website is an open-source way for students to share their projects. Learn how I made it!"
 layout: "project"  # We'll create a project layout or use default
 technologies:
-  - Python
-  - PyTorch
-  - Flask
+  - HTML
+  - CSS
+  - Webdev
 ---
 
 # Introduction
@@ -45,7 +45,7 @@ Markdown doesn't have built-in column support, so you can use small HTML blocks:
 ![Small Image](/assets/images/tower.jpg){: style="width:100px; text-align:right; margin-left:1rem;" }
 
 <div style="text-align: right;">
-    <img src="example.jpg" alt="Example Image" />
+    <img src="tower.jpg" alt="Example Image" />
 </div>
 
 ## Code snippets
@@ -60,11 +60,11 @@ def greet(name):
 
 ## embedding videos
 remeber to add a clear style `<div>` or suffer the consequences.
-<iframe width="560" height="315"
+<iframe width="480" height="240"
   src="https://www.youtube.com/embed/dQw4w9WgXcQ"
   title="YouTube video player"
   frameborder="0"
-  style="float: right; margin: 10px;"
+  style="text-align: center; margin: 10px;"
   allowfullscreen>
 </iframe>
 <div style="clear: both;"></div>
