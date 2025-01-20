@@ -1,23 +1,18 @@
-/* -------------------------------------------------------- */
-/* 1. Import Google Fonts                                  */
-/* -------------------------------------------------------- */
+/* ========== IMPORT & ROOT VARIABLES ========== */
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&family=Poppins:wght@400;600&display=swap");
-:root {
-    --header-font: "Poppins", sans-serif; /* Replace with your selected header font */
-    --body-font: "IBM Plex Mono", monospace;
 
+:root {
+    --header-font: "Poppins", sans-serif;
+    --body-font: "IBM Plex Mono", monospace;
     --header-bg: #fff;
     --header-text-color: #333;
     --small-header-text-color: #333;
-
     --body-text-color: #333;
     --link-color: #666;
     --link-hover-color: #000;
 }
 
-/* -------------------------------------------------------- */
-/* 3. Global Reset & Body                                  */
-/* -------------------------------------------------------- */
+/* ========== GLOBAL RESET & BODY ========== */
 * {
     margin: 0;
     padding: 0;
@@ -28,13 +23,10 @@ body {
     font-family: var(--body-font);
     color: var(--body-text-color);
     background-color: #fff;
-    margin: 0;
     line-height: 1.6;
 }
 
-/* -------------------------------------------------------- */
-/* 4. Header Bar (Optional)                                */
-/* -------------------------------------------------------- */
+/* ========== HEADER ========== */
 header {
     display: flex;
     align-items: center;
@@ -44,7 +36,6 @@ header {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 0.75rem 9.25%;
 }
-
 .site-title {
     font-family: var(--header-font);
     font-size: 1.7rem;
@@ -52,7 +43,6 @@ header {
     text-decoration: none;
     color: var(--header-text-color);
 }
-
 .nav-links a {
     margin-left: 1.5rem;
     text-decoration: none;
@@ -65,57 +55,41 @@ header {
     color: var(--link-hover-color);
 }
 
-/* -------------------------------------------------------- */
-/* 5. Main Content Area                                    */
-/* -------------------------------------------------------- */
+/* ========== MAIN CONTENT ========== */
 main {
     max-width: 80%;
-    margin: 0 auto; /* center horizontally */
+    margin: 0 auto;
     padding: 2rem;
-    text-align: left; /* keep text left-aligned */
+    text-align: left;
 }
-
 main.about {
-    margin-left: 7%; /* 10% margin on the left */
-    margin-right: 30%; /* 40% margin on the right */
-    padding: 2rem; /* Add some padding for spacing */
-    text-align: left; /* Ensure text alignment */
+    margin-left: 7%;
+    margin-right: 30%;
+    padding: 2rem;
+    text-align: left;
 }
 
-/* -------------------------------------------------------- */
-/* Custom List Styling                                      */
-/* -------------------------------------------------------- */
+/* ========== CUSTOM LIST STYLING ========== */
 main ul {
-    list-style: none; /* Remove default bullets */
-    padding-left: 1.5rem; /* Add some space on the left for the bullets */
+    list-style: none;
+    padding-left: 1.5rem;
 }
-
 main ul li::before {
-    content: "➜"; /* Custom bullet point */
-    color: var(--link-color); /* Use your theme's link color */
-    font-weight: bold; /* Make it stand out */
-    margin-right: 0.5rem; /* Space between bullet and text */
-    display: inline-block; /* Ensure alignment */
+    content: "➜";
+    color: var(--link-color);
+    font-weight: bold;
+    margin-right: 0.5rem;
+    display: inline-block;
 }
-
 main ul li {
-    margin-bottom: 0.8rem; /* Add spacing between list items */
-    font-size: 1.2rem; /* Slightly larger text for readability */
-    line-height: 1.5; /* Improve line spacing */
-    letter-spacing: -0.02em; /* Slightly tighten character spacing */
-    word-spacing: -0.1em; /* Reduce space between words */
+    margin-bottom: 0.8rem;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    letter-spacing: -0.02em;
+    word-spacing: -0.1em;
 }
 
-@media (max-width: 600px) {
-    .about {
-        margin-left: 5%; /* Adjust for smaller screens */
-        margin-right: 10%; /* Adjust for smaller screens */
-        padding: 1rem;
-    }
-}
-/* -------------------------------------------------------- */
-/* 6. Footer (Optional)                                    */
-/* -------------------------------------------------------- */
+/* ========== FOOTER ========== */
 footer {
     text-align: center;
     padding: 1rem 0;
@@ -123,25 +97,20 @@ footer {
     font-size: 0.875rem;
 }
 
-/* -------------------------------------------------------- */
-/* 7. Headings (Markdown-based)                            */
-/* -------------------------------------------------------- */
-/* Large h1 for the “Hi, I’m Michael Scutari” or any top-level heading */
+/* ========== HEADINGS ========== */
 h1 {
     font-family: var(--header-font);
-    font-size: 4rem; /* bigger than default */
-    color: #111; /* near-black for emphasis */
+    font-size: 4rem;
+    color: #111;
     margin-bottom: 1rem;
     line-height: 1.2;
     font-weight: 700;
 }
-
-/* Subheadings (if you use h2, h3, etc.) */
 h2,
 h3 {
     font-family: var(--body-font);
-    letter-spacing: -0.02em; /* Slightly tighten character spacing */
-    word-spacing: -0.2em; /* Reduce space between words */
+    letter-spacing: -0.02em;
+    word-spacing: -0.2em;
     font-size: 1.3rem;
     color: var(--small-header-text-color);
     margin-top: 1.5rem;
@@ -149,58 +118,47 @@ h3 {
     font-weight: 520;
 }
 
-/* -------------------------------------------------------- */
-/* 8. Paragraphs & Links                                   */
-/* -------------------------------------------------------- */
+/* ========== PARAGRAPHS & LINKS ========== */
 p {
-    font-size: 1.2rem; /* slightly larger body text */
+    font-size: 1.2rem;
     margin-bottom: 1.5rem;
-    letter-spacing: -0.02em; /* Slightly tighten character spacing */
-    word-spacing: -0.2em; /* Reduce space between words */
+    letter-spacing: -0.02em;
+    word-spacing: -0.2em;
 }
-
 h2 img {
-    width: 1em; /* Match size to font height */
+    width: 1em;
     height: 1em;
     vertical-align: middle;
-    margin-left: -0.1em; /* Add spacing between text and icon */
+    margin-left: -0.1em;
     margin-top: -0.2em;
 }
-
 a {
     color: var(--link-color);
     text-decoration: none;
-    font-weight: 600; /* semi-bold for emphasis */
+    font-weight: 600;
 }
 a:hover {
     color: var(--link-hover-color);
 }
-
 .download-arrow {
     font-size: 1rem;
     margin-left: -0.15rem;
     display: inline-block;
     transition: transform 0.2s ease;
 }
-
 .nav-links a:hover .download-arrow {
-    transform: translateY(3px); /* Add a slight "bounce" on hover */
+    transform: translateY(3px);
 }
 
-/* ===========================
-   Projects Page Overrides
-   =========================== */
+/* ========== PROJECTS PAGE ========== */
 .projects-page h1 {
     font-size: 2rem;
     margin-bottom: 1rem;
 }
-
-/* Filter Buttons */
 .project-filters {
     margin-bottom: 1rem;
-    text-align: center; /* Center the buttons themselves */
+    text-align: center;
 }
-
 .project-filters button {
     padding: 0.5rem 1rem;
     margin: 0 0.5rem;
@@ -213,79 +171,48 @@ a:hover {
         background 0.2s ease,
         color 0.2s ease;
 }
-
 .project-filters button:hover {
     background: #f5f5f5;
 }
-
-/* Highlight the selected filter */
 .project-filters button.active {
-    background-color: #050505; /* Or your preferred brand color */
+    background-color: #050505;
     color: #fff;
     border-color: #0f0f0f;
 }
-
-/* Section Headings */
 .projects-page h2 {
     margin-top: 2rem;
     margin-bottom: 1rem;
     font-family: var(--header-font);
     word-spacing: 0.05em;
 }
-
-/* The galleries: 3 columns, centered.
-   If you want strict 3 columns even on small screens, we won't auto-fit. */
 .project-gallery {
     display: grid;
-    /* Exactly three columns, each with equal width */
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
-    justify-content: center; /* centers the entire grid horizontally */
+    justify-content: center;
     margin-bottom: 2rem;
 }
-
-/* Individual project cards */
 .project-item {
-    background-color: #fff;
-    border: 1px solid #eee;
-    border-radius: 8px; /* Rounded corners */
-    padding: 1rem;
-    text-align: left; /* Left-justify text */
-    transition: box-shadow 0.2s ease;
-}
-
-/* Hover effect */
-.project-item:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Project thumbnail/image */
-.project-item img {
-    width: 100%;
-    height: 180px; /* or whatever height you prefer */
-    object-fit: cover; /* ensures the image is cropped rather than distorted */
-    border-radius: 6px; /* Keep your existing corner rounding if desired */
-    margin-bottom: -1.65rem;
-}
-
-/* Title within card */
-.project-item {
-    display: block; /* So the <a> becomes a block-level card */
-    text-decoration: none; /* Remove default underline */
-    color: inherit; /* Use the parent’s text color */
+    display: block;
     background-color: #f7f7f7;
     border: 1px solid #eee;
     border-radius: 8px;
     padding: 1rem;
+    color: inherit;
     text-align: left;
+    text-decoration: none;
     transition: box-shadow 0.2s ease;
 }
-
 .project-item:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-
-/* For the headings/paragraphs inside the <a> */
+.project-item img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: -1.65rem;
+}
 .project-item h2 {
     margin-bottom: 0.5rem;
     font-family: var(--header-font);
@@ -297,28 +224,24 @@ a:hover {
     font-weight: 100;
     font-size: 15px;
 }
-
 .featured-gallery,
 .all-gallery {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* exactly 3 columns */
+    grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
-    justify-content: center; /* center the columns horizontally */
+    justify-content: center;
     margin-bottom: 2rem;
 }
-
 hr {
-    margin-bottom: 10px; /* Adjust the value to your preferred margin */
+    margin-bottom: 10px;
 }
 
-/* Layout for the project detail page */
+/* ========== PROJECT DETAIL PAGE ========== */
 .project-page {
-    max-width: 800px; /* or whatever width you prefer */
+    max-width: 800px;
     margin: 0 auto;
     padding: 2rem;
 }
-
-/* Optional hero/banner image */
 .project-hero {
     margin-bottom: 1.5rem;
 }
@@ -326,10 +249,8 @@ hr {
     width: 100%;
     height: auto;
     display: block;
-    border-radius: 8px; /* or 0 if you prefer square corners */
+    border-radius: 8px;
 }
-
-/* Main article content styling */
 .project-content {
     text-align: left;
 }
@@ -352,35 +273,26 @@ hr {
     line-height: 1.6;
     font-family: var(--body-font);
 }
-
-/* Back to Projects link */
 .back-link {
     margin-bottom: 1rem;
 }
-
 .back-link a {
     color: var(--link-color);
     text-decoration: none;
     font-weight: 600;
     font-family: var(--body-font);
 }
-
 .back-link a:hover {
     text-decoration: underline;
 }
-
-/* Simple list or inline badges for technologies */
 .technologies {
     margin-bottom: 1.5rem;
 }
-
 .technologies ul {
     list-style-type: disc;
-    margin: 0.5rem 0 0.5rem 1.5rem; /* indent bullet points */
+    margin: 0.5rem 0 0.5rem 1.5rem;
     padding: 0;
 }
-
-/* If using inline badges instead of <ul> ... */
 .tech-badge {
     display: inline-block;
     background-color: #eee;
@@ -392,36 +304,31 @@ hr {
     font-family: var(--body-font);
 }
 
-/*
-   If you want this layout to be responsive on smaller screens
-   (so it doesn't squish into 3 tiny columns), add a media query:
-*/
+/* ========== RESPONSIVE ADJUSTMENTS ========== */
 @media (max-width: 900px) {
     .project-gallery {
-        grid-template-columns: 1fr 1fr; /* 2 columns on mid-size screens */
+        grid-template-columns: 1fr 1fr;
     }
 }
-
 @media (max-width: 600px) {
-    .project-gallery {
-        grid-template-columns: 1fr; /* 1 column on small screens */
+    .about {
+        margin-left: 5%;
+        margin-right: 10%;
+        padding: 1rem;
     }
-}
-
-/* -------------------------------------------------------- */
-/* 9. Responsive Adjustments                               */
-/* -------------------------------------------------------- */
-@media (max-width: 600px) {
     header {
-        padding: 1rem 2rem; /* reduce horizontal padding on smaller screens */
+        padding: 1rem 2rem;
     }
     h1 {
-        font-size: 2.2rem; /* scale down heading for mobile */
+        font-size: 2.2rem;
     }
     p {
-        font-size: 1.1rem; /* slightly smaller text on mobile */
+        font-size: 1.1rem;
     }
     main {
-        padding: 1rem; /* less side padding for small screens */
+        padding: 1rem;
+    }
+    .project-gallery {
+        grid-template-columns: 1fr;
     }
 }
