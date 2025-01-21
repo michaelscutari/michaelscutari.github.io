@@ -6,7 +6,7 @@ priority: 4
 header_image: "/assets/images/tower.jpg"
 description: "This website is an open-source way for students to share their projects. Learn how I made it!"
 layout: "project"  # We'll create a project layout or use default
-status: "new"
+status: "under_construction"
 technologies:
   - HTML
   - CSS
