@@ -6,6 +6,7 @@ priority: 4
 header_image: "/assets/images/humanoid_teaser.jpg"
 description: "Open source, 10 degrees of freedom humanoid robot. I directed design of electrical and control systems."
 layout: "project"  # We'll create a project layout or use default
+status: "under_construction"
 technologies:
   - Python
   - PyTorch

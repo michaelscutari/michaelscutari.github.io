@@ -6,6 +6,7 @@ css_class: "projects-page"
 ---
 
 # Featured Projects
+
 ---
 <!-- Featured Projects (highest priority) -->
 <div class="featured-gallery">
@@ -13,24 +14,46 @@ css_class: "projects-page"
   {% assign top_three = sorted_by_priority | slice: 0,3 %}
 
   {% for project in top_three %}
-    <a
-      class="project-item"
-      data-category="{{ project.category }}"
-      href="{{ project.url }}"
-    >
-      <img src="{{ project.header_image | relative_url }}" alt="{{ project.title }}">
-      <h2>{{ project.title }}</h2>
-      <p>{{ project.description }}</p>
-    </a>
+    <!-- Grab status, default to "" if none -->
+    {% assign s = project.status | default: "" %}
+
+    {% if s contains "under_construction" %}
+      <!-- Non-clickable featured item -->
+      <div class="project-item" data-category="{{ project.category }}">
+        <div class="under-construction-banner">
+          🚧 Under Construction 🚧
+        </div>
+        {% if s contains "new" %}
+          <div class="corner-ribbon">New</div>
+        {% endif %}
+
+        {% if project.header_image %}
+          <img src="{{ project.header_image | relative_url }}" alt="{{ project.title }}">
+        {% endif %}
+        <h2>{{ project.title }}</h2>
+        <p>{{ project.description }}</p>
+      </div>
+    {% else %}
+      <!-- Clickable featured item -->
+      <a class="project-item"
+         data-category="{{ project.category }}"
+         href="{{ project.url }}">
+        {% if s contains "new" %}
+          <div class="corner-ribbon">New!</div>
+        {% endif %}
+        {% if project.header_image %}
+          <img src="{{ project.header_image | relative_url }}" alt="{{ project.title }}">
+        {% endif %}
+        <h2>{{ project.title }}</h2>
+        <p>{{ project.description }}</p>
+      </a>
+    {% endif %}
   {% endfor %}
 </div>
 
-
-
-<!-- All Projects (sorted newest to oldest by date) -->
 # All Projects
----
 
+---
 <!-- Filter Buttons -->
 <div class="project-filters">
   <button data-filter="all" onclick="filterAllProjects('all')">All</button>
@@ -42,21 +65,44 @@ css_class: "projects-page"
 <div class="all-gallery">
   {% assign sorted_by_date = site.projects | sort: 'date' | reverse %}
   {% for project in sorted_by_date %}
-    <a
-      class="project-item"
-      data-category="{{ project.category }}"
-      href="{{ project.url }}"
-    >
-      <img src="{{ project.header_image | relative_url }}" alt="{{ project.title }}">
-      <h2>{{ project.title }}</h2>
-      <p>{{ project.description }}</p>
-    </a>
+    {% assign s = project.status | default: "" %}
+
+    {% if s contains "under_construction" %}
+      <!-- Non-clickable item -->
+      <div class="project-item" data-category="{{ project.category }}">
+        <div class="under-construction-banner">
+          🚧 Under Construction 🚧
+        </div>
+        {% if s contains "new" %}
+          <div class="corner-ribbon">New!</div>
+        {% endif %}
+        {% if project.header_image %}
+          <img src="{{ project.header_image | relative_url }}" alt="{{ project.title }}">
+        {% endif %}
+        <h2>{{ project.title }}</h2>
+        <p>{{ project.description }}</p>
+      </div>
+    {% else %}
+      <!-- Clickable item -->
+      <a class="project-item"
+         data-category="{{ project.category }}"
+         href="{{ project.url }}">
+        {% if s contains "new" %}
+          <div class="corner-ribbon">New!</div>
+        {% endif %}
+        {% if project.header_image %}
+          <img src="{{ project.header_image | relative_url }}" alt="{{ project.title }}">
+        {% endif %}
+        <h2>{{ project.title }}</h2>
+        <p>{{ project.description }}</p>
+      </a>
+    {% endif %}
   {% endfor %}
 </div>
 
 <script>
   function filterAllProjects(category) {
-    // 1. Filter logic for .all-gallery
+    // Only select items within the all-gallery
     const items = document.querySelectorAll('.all-gallery .project-item');
     items.forEach(item => {
       if (category === 'all') {
@@ -67,20 +113,18 @@ css_class: "projects-page"
       }
     });
 
-    // 2. Highlight the correct button
+    // Highlight the correct button
     const buttons = document.querySelectorAll('.project-filters button');
     buttons.forEach(btn => {
-      // Remove .active from all buttons
       btn.classList.remove('active');
-      // If this button's data-filter matches `category`, add .active
       if (btn.dataset.filter === category) {
         btn.classList.add('active');
       }
     });
   }
 
-   //Optionally: Call `filterAllProjects('all')` by default on page load:
-   document.addEventListener('DOMContentLoaded', () => {
-   filterAllProjects('all');
-   });
+  // Optional: auto-show "All" on page load
+  document.addEventListener('DOMContentLoaded', () => {
+    filterAllProjects('all');
+  });
 </script>

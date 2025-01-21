@@ -69,6 +69,7 @@
 
         <!-- Dynamically add a class to the main element -->
         <main class="projects-page"><h1 id="featured-projects">Featured Projects</h1>
+
 <hr />
 <!-- Featured Projects (highest priority) -->
 <div class="featured-gallery">
@@ -76,30 +77,62 @@
   
 
   
-    <a class="project-item" data-category="professional" href="/projects/general_robotics_lab/">
-      <img src="/assets/images/humanoid_teaser.jpg" alt="Duke Humanoid" />
-      <h2>Duke Humanoid</h2>
-      <p>Open source, 10 degrees of freedom humanoid robot. I directed design of electrical and control systems.</p>
-    </a>
+    <!-- Grab status, default to "" if none -->
+    
+
+    
+      <!-- Clickable featured item -->
+      <a class="project-item" data-category="personal" href="/projects/demo/">
+        
+          <div class="corner-ribbon">New!</div>
+        
+        
+          <img src="/assets/images/tower.jpg" alt="Markdown Demo" />
+        
+        <h2>Markdown Demo</h2>
+        <p>This website is an open-source way for students to share their projects. Learn how I made it!</p>
+      </a>
+    
   
-    <a class="project-item" data-category="personal" href="/projects/demo/">
-      <img src="/assets/images/tower.jpg" alt="Markdown Demo" />
-      <h2>Markdown Demo</h2>
-      <p>Open source, 10 degrees of freedom humanoid robot. I directed design of electrical and control systems.</p>
-    </a>
+    <!-- Grab status, default to "" if none -->
+    
+
+    
+      <!-- Non-clickable featured item -->
+      <div class="project-item" data-category="professional">
+        <div class="under-construction-banner">
+          🚧 Under Construction 🚧
+        </div>
+        
+
+        
+          <img src="/assets/images/humanoid_teaser.jpg" alt="Duke Humanoid" />
+        
+        <h2>Duke Humanoid</h2>
+        <p>Open source, 10 degrees of freedom humanoid robot. I directed design of electrical and control systems.</p>
+      </div>
+    
   
-    <a class="project-item" data-category="professional" href="/projects/ranker/">
-      <img src="/assets/images/ranker_teaser.jpg" alt="Ranker Program Refactor" />
-      <h2>Ranker Program Refactor</h2>
-      <p>Hired and led a intra-university team of 3 in updating the Amboseli Baboon Lab's 'Ranker' Program.</p>
-    </a>
+    <!-- Grab status, default to "" if none -->
+    
+
+    
+      <!-- Clickable featured item -->
+      <a class="project-item" data-category="professional" href="/projects/ranker/">
+        
+        
+          <img src="/assets/images/ranker_teaser.jpg" alt="Ranker Program Refactor" />
+        
+        <h2>Ranker Program Refactor</h2>
+        <p>Hired and led a intra-university team of 3 in updating the Amboseli Baboon Lab's 'Ranker' Program.</p>
+      </a>
+    
   
 </div>
 
-<!-- All Projects (sorted newest to oldest by date) -->
 <h1 id="all-projects">All Projects</h1>
-<hr />
 
+<hr />
 <!-- Filter Buttons -->
 <div class="project-filters">
   <button data-filter="all" onclick="filterAllProjects('all')">All</button>
@@ -111,29 +144,58 @@
 <div class="all-gallery">
   
   
-    <a class="project-item" data-category="professional" href="/projects/ranker/">
-      <img src="/assets/images/ranker_teaser.jpg" alt="Ranker Program Refactor" />
-      <h2>Ranker Program Refactor</h2>
-      <p>Hired and led a intra-university team of 3 in updating the Amboseli Baboon Lab's 'Ranker' Program.</p>
-    </a>
+    
+
+    
+      <!-- Clickable item -->
+      <a class="project-item" data-category="personal" href="/projects/demo/">
+        
+          <div class="corner-ribbon">New!</div>
+        
+        
+          <img src="/assets/images/tower.jpg" alt="Markdown Demo" />
+        
+        <h2>Markdown Demo</h2>
+        <p>This website is an open-source way for students to share their projects. Learn how I made it!</p>
+      </a>
+    
   
-    <a class="project-item" data-category="professional" href="/projects/general_robotics_lab/">
-      <img src="/assets/images/humanoid_teaser.jpg" alt="Duke Humanoid" />
-      <h2>Duke Humanoid</h2>
-      <p>Open source, 10 degrees of freedom humanoid robot. I directed design of electrical and control systems.</p>
-    </a>
+    
+
+    
+      <!-- Clickable item -->
+      <a class="project-item" data-category="professional" href="/projects/ranker/">
+        
+        
+          <img src="/assets/images/ranker_teaser.jpg" alt="Ranker Program Refactor" />
+        
+        <h2>Ranker Program Refactor</h2>
+        <p>Hired and led a intra-university team of 3 in updating the Amboseli Baboon Lab's 'Ranker' Program.</p>
+      </a>
+    
   
-    <a class="project-item" data-category="personal" href="/projects/demo/">
-      <img src="/assets/images/tower.jpg" alt="Markdown Demo" />
-      <h2>Markdown Demo</h2>
-      <p>Open source, 10 degrees of freedom humanoid robot. I directed design of electrical and control systems.</p>
-    </a>
+    
+
+    
+      <!-- Non-clickable item -->
+      <div class="project-item" data-category="professional">
+        <div class="under-construction-banner">
+          🚧 Under Construction 🚧
+        </div>
+        
+        
+          <img src="/assets/images/humanoid_teaser.jpg" alt="Duke Humanoid" />
+        
+        <h2>Duke Humanoid</h2>
+        <p>Open source, 10 degrees of freedom humanoid robot. I directed design of electrical and control systems.</p>
+      </div>
+    
   
 </div>
 
 <script>
   function filterAllProjects(category) {
-    // 1. Filter logic for .all-gallery
+    // Only select items within the all-gallery
     const items = document.querySelectorAll('.all-gallery .project-item');
     items.forEach(item => {
       if (category === 'all') {
@@ -144,22 +206,20 @@
       }
     });
 
-    // 2. Highlight the correct button
+    // Highlight the correct button
     const buttons = document.querySelectorAll('.project-filters button');
     buttons.forEach(btn => {
-      // Remove .active from all buttons
       btn.classList.remove('active');
-      // If this button's data-filter matches `category`, add .active
       if (btn.dataset.filter === category) {
         btn.classList.add('active');
       }
     });
   }
 
-   //Optionally: Call `filterAllProjects('all')` by default on page load:
-   document.addEventListener('DOMContentLoaded', () => {
-   filterAllProjects('all');
-   });
+  // Optional: auto-show "All" on page load
+  document.addEventListener('DOMContentLoaded', () => {
+    filterAllProjects('all');
+  });
 </script>
 
 </main>

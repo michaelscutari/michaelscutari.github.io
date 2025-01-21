@@ -9,7 +9,7 @@ css_class: about
 ## I am an undergraduate and Pratt Fellow at Duke University.
 
 Right now, my work focuses on harnessing deep learning to solve big problems. I am a researcher in both the
-<a href="https://linkedin.com/in/yourusername">Singh Lab</a> and the <a href="https://linkedin.com/in/yourusername">Rudin Lab</a>.
+<a href="https://singhlab.net">Singh Lab</a> and the <a href="https://users.cs.duke.edu/~cynthia/lab.html">Interpretable Machine Learning Lab</a>.
 Beyond research, I am passionate about music, entrepreneurship, and photography.
 
 ---
