@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <title>Markdown Demo</title>
+        <title>Website Demo</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
         <!-- MathJax Config -->
@@ -24,9 +24,9 @@
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 
         <!-- Optional: SEO tag --><!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Markdown Demo | My Jekyll Site</title>
+<title>Website Demo | My Jekyll Site</title>
 <meta name="generator" content="Jekyll v4.3.4" />
-<meta property="og:title" content="Markdown Demo" />
+<meta property="og:title" content="Website Demo" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="This website is an open-source way for students to share their projects. Learn how I made it!" />
 <meta property="og:description" content="This website is an open-source way for students to share their projects. Learn how I made it!" />
@@ -36,9 +36,9 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2025-01-20T00:00:00-05:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Markdown Demo" />
+<meta property="twitter:title" content="Website Demo" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-01-20T00:00:00-05:00","datePublished":"2025-01-20T00:00:00-05:00","description":"This website is an open-source way for students to share their projects. Learn how I made it!","headline":"Markdown Demo","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/projects/demo/"},"url":"http://localhost:4000/projects/demo/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-01-20T00:00:00-05:00","datePublished":"2025-01-20T00:00:00-05:00","description":"This website is an open-source way for students to share their projects. Learn how I made it!","headline":"Website Demo","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/projects/demo/"},"url":"http://localhost:4000/projects/demo/"}</script>
 <!-- End Jekyll SEO tag -->
 <!-- Main CSS -->
         <link
@@ -97,19 +97,19 @@
             <div class="project-hero">
                 <img
                     src="/assets/images/tower.jpg"
-                    alt="Markdown Demo"
+                    alt="Website Demo"
                 />
             </div>
             
 
             <article class="project-content">
-                <h1>Markdown Demo</h1>
+                <h1>Website Demo</h1>
                 <p class="project-meta">
                     
                     <strong>Date:</strong> January 20, 2025
                     &nbsp;  
                     <strong>Category:</strong> personal &nbsp;  
-                    <strong>Priority:</strong> 4 
+                    <strong>Priority:</strong> 3 
                 </p>
 
                 
@@ -125,7 +125,26 @@
                 </div>
                  <h1 id="introduction">Introduction</h1>
 
-<p>This page tests various Markdown (and inline HTML) formatting features to ensure your site’s styling handles them well. Below are examples of <strong>two columns</strong>, <strong>images</strong> of different sizes and alignments, <strong>code blocks</strong>, <strong>tables</strong>, <strong>text-wrapped images</strong>, and an <strong>embedded YouTube video</strong>.</p>
+<p>I made this website to display a lot of the projects that I have worked on in more detail, but in many ways this site itself is a
+project! My goal was to design something that other students and engineers could edit to be their own. The original repository
+for this project can be found <a href="https://github.com/michaelscutari/michaelscutari.github.io">here</a> and an example of someone else
+using this repository already <a href="https://isabeldudlyke.github.io">here</a>!</p>
+
+<h2 id="vision">Vision</h2>
+<p>Using GitHub Pages means that the site is completely free to host, and using Jekyll means that the site can be customized by
+only editing Markdown documents. I currently still in the process of creating another repository with a tutorial that will
+show people the basics of using Git and Markdown to create their own website.</p>
+
+<h2 id="creation">Creation</h2>
+<p>The whole website was created over the course of a long weekend. I am super happy with the result and would like to thank
+<a href="https://shaan106.github.io">Shaan Yadav</a> for the inspiration and motivation to get started with this project.</p>
+
+<h2 id="technical-specs">Technical Specs</h2>
+<p>The website is built using Jekyll, a static site generator, with Liquid templating for dynamic content. It utilizes HTML5, CSS3, and JavaScript for structure, styling, and interactivity. The CSS incorporates responsive design principles, while JavaScript enables dynamic features like a hamburger menu and project filtering. Additional tools include MathJax for rendering LaTeX math and GitHub Pages for hosting. The layout is optimized with media queries and grid-based galleries.</p>
+
+<h2 id="content">Content</h2>
+<p>This page tests various Markdown (and inline HTML) formatting features to ensure the site’s styling handles them well and to
+serve as a reference. Below are examples of <strong>two columns</strong>, <strong>images</strong> of different sizes and alignments, <strong>code blocks</strong>, <strong>tables</strong>, <strong>text-wrapped images</strong>, and an <strong>embedded YouTube video</strong>.</p>
 
 <hr />
 
@@ -147,7 +166,7 @@
 </div>
 
 <hr />
-<h2 id="examples-of-custom-sized-and-justified-images">Examples of custom sized and justified images.</h2>
+<h2 id="examples-of-custom-sized-and-justified-images">Examples of custom sized and justified images</h2>
 <p><img src="/assets/images/tower.jpg" alt="Avatar" class="float-left" style="width: 150px;" />
 <img src="/assets/images/ranker_teaser.jpg" alt="Avatar" class="float-right" style="width: 150px;" /></p>
 <div style="clear: both;"></div>
@@ -156,7 +175,15 @@
 <p><img src="/assets/images/tower.jpg" alt="Small Image" style="width:100px; text-align:right; margin-left:1rem;" /></p>
 
 <div style="text-align: right;">
-    <img src="tower.jpg" alt="Example Image" />
+    <img src="/assets/images/tower.jpg" alt="Example Image" />
+</div>
+
+<div style="display: flex; justify-content: center;">
+    <img src="/assets/images/tower.jpg" alt="Example" />
+</div>
+
+<div style="display: flex; justify-content: right;">
+    <img src="/assets/images/tower.jpg" alt="Example" />
 </div>
 
 <h2 id="code-snippets">Code snippets</h2>
@@ -166,15 +193,48 @@
     <span class="k">return</span> <span class="sa">f</span><span class="sh">"</span><span class="s">Greeting for </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s"> created.</span><span class="sh">"</span>
 </code></pre></div></div>
 
-<h2 id="embedding-videos">embedding videos</h2>
-<p>remeber to add a clear style <code class="language-plaintext highlighter-rouge">&lt;div&gt;</code> or suffer the consequences.</p>
+<h2 id="table">Table</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Feature</th>
+      <th>Description</th>
+      <th>Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Responsive</strong></td>
+      <td>Adjusts to screen sizes</td>
+      <td>Mobile-friendly layout</td>
+    </tr>
+    <tr>
+      <td><strong>Customizable</strong></td>
+      <td>Easily modify styles and content</td>
+      <td>Edit Markdown and CSS</td>
+    </tr>
+    <tr>
+      <td><strong>Open Source</strong></td>
+      <td>Free to use and contribute</td>
+      <td>GitHub Repository Link</td>
+    </tr>
+    <tr>
+      <td><strong>Fast Loading</strong></td>
+      <td>Optimized for performance</td>
+      <td>Minimal external assets</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="embedding-videos">Embedding videos</h2>
+<p>Remeber to add a clear style <code class="language-plaintext highlighter-rouge">&lt;div&gt;</code> or suffer the consequences.</p>
 <iframe width="480" height="240" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" frameborder="0" style="text-align: center; margin: 10px;" allowfullscreen="">
 </iframe>
 <div style="clear: both;"></div>
 
 <h2 id="math">Math</h2>
-<p>Inline math: ( a^2 + b^2 = c^2 )
-Different inline math: $x^2 +y^2 = z^2$</p>
+<p>Inline math: $x^2 +y^2 = z^2$</p>
 
 <p>Display math:
 \(\frac{\partial}{\partial x} f(x,y) = 2x + y^2\)</p>
