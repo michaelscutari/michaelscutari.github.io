@@ -2,7 +2,7 @@
 title: "Website Demo"
 date: 2025-01-20
 category: "personal"  # or "personal"
-priority: 3
+priority: 6
 header_image: "/assets/images/tower.jpg"
 description: "This website is an open-source way for students to share their projects. Learn how I made it!"
 layout: "project"  # We'll create a project layout or use default
