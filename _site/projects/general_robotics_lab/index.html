@@ -24,7 +24,7 @@
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 
         <!-- Optional: SEO tag --><!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Duke Humanoid | My Jekyll Site</title>
+<title>Duke Humanoid | Michael Scutari</title>
 <meta name="generator" content="Jekyll v4.3.4" />
 <meta property="og:title" content="Duke Humanoid" />
 <meta property="og:locale" content="en_US" />
@@ -32,7 +32,7 @@
 <meta property="og:description" content="Open source, 10 degrees of freedom humanoid robot. I directed design of electrical and control systems." />
 <link rel="canonical" href="http://localhost:4000/projects/general_robotics_lab/" />
 <meta property="og:url" content="http://localhost:4000/projects/general_robotics_lab/" />
-<meta property="og:site_name" content="My Jekyll Site" />
+<meta property="og:site_name" content="Michael Scutari" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2025-01-01T00:00:00-05:00" />
 <meta name="twitter:card" content="summary" />
@@ -116,14 +116,91 @@
                 <div class="technologies">
                     <strong>Technologies:</strong>
                     
+                    <span class="tech-badge">Fusion360</span>
+                    
+                    <span class="tech-badge">C</span>
+                    
                     <span class="tech-badge">Python</span>
                     
-                    <span class="tech-badge">PyTorch</span>
+                    <span class="tech-badge">Reinforcement Learning</span>
                     
-                    <span class="tech-badge">Flask</span>
+                    <span class="tech-badge">Custom PCB</span>
                     
                 </div>
-                 <h2 id="coming-soon">Coming Soon!</h2>
+                 <h1 id="introduction">Introduction</h1>
+<p>I began working with the General Robotics Lab under Professor Boyuan Chen in the Fall of my sophomore year. I contributed to building a 10-DOF humanoid robot capable of dynamic movements and real-time decision-making, addressing challenges in power distribution, sensor integration, and machine learning.</p>
+
+<p>This experience helped me develop expertise in:</p>
+<ul>
+  <li>The fundamentals of how academic research is conducted.</li>
+  <li>Reinforcement learning and popular paradigms (<code class="language-plaintext highlighter-rouge">PPO</code>, <code class="language-plaintext highlighter-rouge">Actor-Critic</code>).</li>
+  <li>Managing and mentoring a large team effectively to achieve technical goals.</li>
+</ul>
+
+<p>Initially, my contributions were closely supervised by post-doc Boxi Xia. Over time, I took ownership of projects, mentored undergraduates, and advanced key technical components. While I moved on to pursue <code class="language-plaintext highlighter-rouge">machine learning</code> more directly, my passion for <code class="language-plaintext highlighter-rouge">robotics</code> and <code class="language-plaintext highlighter-rouge">robot learning</code> remains strong.</p>
+
+<hr />
+
+<h1 id="device-interfacing">Device Interfacing</h1>
+
+<figure class="image-caption" style="float: right; width: 150px; margin: 0 0 10px 0;">
+    <img src="/assets/images/imu.webp" alt="IMU" style="width: 100%;" />
+    <figcaption>AHRS-IMU.</figcaption>
+</figure>
+
+<p>One of my primary tasks was interfacing with several types of sensor devices, including an AHRS-IMU, pressure sensors, voltage and current measurement devices, and custom-designed motors.</p>
+
+<p>This required learning how to interface with <code class="language-plaintext highlighter-rouge">EtherCAT</code> and <code class="language-plaintext highlighter-rouge">CanOPEN</code> devices, several custom serial communication protocols, and even developing my own protocol for force sensors. By leveraging a Teensy 4.0 microcontroller, I reduced system delays to sub-3 ms by blending <code class="language-plaintext highlighter-rouge">I2C</code>, <code class="language-plaintext highlighter-rouge">EtherCAT</code>, and a custom Teensy-based C IMU serial library.</p>
+
+<figure class="image-caption" style="float: left; width: 150px; margin: 0 15px 0 0;">
+    <img src="/assets/images/humanoid_leg.png" alt="Humanoid Leg" style="width: 100%;" />
+    <figcaption>Humanoid Leg.</figcaption>
+</figure>
+
+<p>Programming this intermediate layer involved designing firmware to handle concurrent tasks, prioritize communication protocols, and ensure seamless integration with the main control system. This enhanced my skills in low-level programming, real-time systems, and hardware-software integration.</p>
+
+<hr />
+
+<h1 id="power-distribution">Power Distribution</h1>
+
+<figure class="image-caption" style="float: right; width: 300px; margin: 0 0 0 15px;">
+    <img src="/assets/images/power_test.jpg" alt="Power distribution testing setup" style="width: 100%;" />
+    <figcaption>Power distribution testing.</figcaption>
+</figure>
+
+<p>To enable dynamic movements, the power system had to safely deliver up to 200A-250A of instantaneous current during intensive operations. The design included multiple voltage levels, individual fusing, brown-out protection, and a robust E-stop switch linked to a normally open (NO) relay for safety.</p>
+
+<p>I optimized the system to handle the high instantaneous peak current of <code class="language-plaintext highlighter-rouge">35A</code> per controller while addressing back-EMF protection, ensuring safety and longevity. This required designing advanced protocols and safeguards to allow the motors to “go dead” during passive movement.</p>
+
+<figure class="image-caption" style="display: block; margin: 0 auto 20px; text-align: center; width: 75%; ">
+    <img src="/assets/images/power_system.png" alt="Power distribution testing setup" style="width: 100%;" />
+    <figcaption>Power distribution testing.</figcaption>
+</figure>
+
+<hr />
+
+<h1 id="reinforcement-learning">Reinforcement Learning</h1>
+
+<p>For me, this was the most exciting part of the project. The challenge was to develop a system simple enough to generalize but complex enough to perform the task effectively.</p>
+
+<p>I chose to use NVIDIA Isaac Gym, which allowed me to train policies massively in parallel using a GPU cluster accessed via <code class="language-plaintext highlighter-rouge">slurm</code>. I started with the <code class="language-plaintext highlighter-rouge">RLGames</code> library implementation of <code class="language-plaintext highlighter-rouge">PPO</code> and built upon it with additional loss terms. The most difficult aspect was determining the goal of using passive movement to enable the robot to swing dynamically. This required extensive training modifications and resulted in an almost <em>30% improvement in power efficiency</em>.</p>
+
+<figure class="image-caption" style="float: right; width: 300px; margin: 0 0 0 15px;">
+    <img src="/assets/images/loss.png" alt="Loss terms" style="width: 100%;" />
+    <figcaption>Loss terms from paper.</figcaption>
+</figure>
+
+<p>This process also involved refining the power system to protect against back EMF and programming the motors for controlled detachment. These optimizations significantly reduced energy waste and contributed to a robust training pipeline.</p>
+
+<p>Overall, this project deepened my understanding of machine learning, robotics, and the importance of interpretable deep learning research in improving performance and efficiency.</p>
+
+<hr />
+<h1 id="links">Links</h1>
+<ul>
+  <li><a href="https://arxiv.org/abs/2409.19795">Published Paper</a></li>
+  <li><a href="http://www.generalroboticslab.com/blogs/blog/2024-09-29-dukehumanoidv1/index.html">Project Website</a></li>
+  <li><a href="https://github.com/generalroboticslab/DukeHumanoidv1">Codebase</a></li>
+</ul>
 
             </article>
         </main>

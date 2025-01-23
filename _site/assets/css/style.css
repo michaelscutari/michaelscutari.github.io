@@ -426,6 +426,30 @@ pre code {
     font-family: var(--body-font);
 }
 
+.float-right {
+    float: right;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+.image-caption {
+    text-align: center; /* Centers the image and caption */
+    margin: 1.5rem 0; /* Adds spacing above and below */
+}
+
+.image-caption img {
+    max-width: 100%; /* Ensures the image scales responsively */
+    height: auto;
+    border-radius: 8px; /* Optional: Adds rounded corners */
+}
+
+.image-caption figcaption {
+    margin-top: 0.5rem; /* Space between the image and caption */
+    font-size: 0.9rem; /* Adjust font size for the caption */
+    color: #666; /* Caption text color */
+    font-style: italic; /* Optional: Makes caption text italic */
+}
+
 /* ========== RESPONSIVE ADJUSTMENTS ========== */
 @media (max-width: 1200px) {
     /* For "About" page or any large margin pages,
