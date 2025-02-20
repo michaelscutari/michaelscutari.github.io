@@ -25,7 +25,9 @@ The library makes it easy to preprocess sequence datasets, cluster them into rep
 
 ## Vision
 
-The goal of this library is to simplify the preprocessing of biological sequence datasets. By integrating MMseqs2 with Python, users can easily cluster sequences and ensure that no clusters bleed into both the training and testing datasets. The functionality is designed to be intuitive, efficient, and adaptable.
+The goal of this library is to simplify the preprocessing of biological sequence datasets. I got frustrated by having to switch between python and the command line when performing repetitive preprocessing tasks. While I have started by integrating mmseqs2 with python, the long-term goal of this library is to be a hub of all common biological preprocessing tasks, serving as another level of abstraction on top of existing tools.
+
+The feature list will continue being updated as they are added. Please feel free to reach out with suggested features or post an issue if you find a bug!
 
 ---
 
