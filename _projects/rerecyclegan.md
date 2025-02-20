@@ -1,8 +1,8 @@
 ---
 title: "Re-recycleGAN"
-date: 2025-01-01
+date: 2024-12-28
 category: "professional"
-priority: 4
+priority: 1
 header_image: "/assets/images/gan_poster.png"
 description: "Built a temporaily consistent video-to-video translation network. Top 6 (highest) of ECE661 final projects."
 layout: "project" 
